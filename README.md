@@ -1,78 +1,77 @@
 # Trinkerr Backend Interview
 
-## Stranger's Call
+## DB cleaning
 
-You are stuck in the maze and have no idea of how to get outside it. You received an anonymous call from someone, offering to help you. You don't know that person but you agreed to accept his help since you were desperate to get out of the maze. 
-
-The person gave you a set of directions to follow, to get you out of the maze. Let **"N"** denote **north** side movement, **"E"** denote **eastward** movement, **"W"** denote **west** and **"S"** denote movement in the **south**. Distance travelled will be the same in each direction, i.e 1m. 
-
-But deep down, you still don't trust the person, that's why you decided to verify his instructions. You decided to calculate where you'll reach after following the instructions. **Determine whether you will remain in the same position after following the instructions or not.**
+You are given a database with corrupted data and your task is to clean the database. DB has lots of redundant entries and you have to first identify the most redundant entries in the DB in order to remove them. Determine the K most redundant data in the database.
 
 
 <br>
 
-`Constraints:`
-Length of the string is <= 10<sup>5</sup>
 
 `Input`
-Given a string, containing only "N", "S", "W", and "E" characters.
+Given an array of DB entries.
 
 `Sample Input 1`
 
 <pre>
-<b>Input</b>: "NWE"
+<b>Input</b>: Entries = [17, 17, 17, 18, 19, 16, 19, 19, 17], k = 2
 
-<b>Output</b>: false
+<b>Output</b>: [17, 19]
 
 <b>Explanation</b>: 
-After following the instructions, you won't be at the same place
+17 occured 4 times and 19 occured 3 times.
 </pre>
 
 
 `Sample Input 2`
 
 <pre>
-<b>Input</b>: "NWSE"
+<b>Input</b>: Entries = [8, 1, 2, 8], k = 2
+
+
+<b>Output</b>: [8, 2]
+
+<b>Explanation</b>: 
+17 occured 4 times and 19 occured 3 times.
+</pre>
+
+
+NOTE: 
+1. K is in between 1 and no. of unique elements. <br>
+2. When many elements have the same frequency, return any one of them.
+
+---
+
+## Place the Criminal 
+
+You are given an array of jail lockup places where each entry is represented by 0 or 1. 0 means there is no criminal, and 1 means there is a criminal there. Criminals when placed adjacent to each other will, start fighting, which is something you have to avoid. Given K more criminals, place them in the lockup (the lockup size is fixed, and once occupied, 0 turn into 1) such that no criminal is fighting, i.e they are not adjacent. If this task is achievable, return true, false otherwise.
+
+
+`Input`:
+Given an array of 0s and 1s.
+
+`Output`:
+Return true if you are able to place the criminals in the lockups without them fighting. False otherwise.
+
+`Sample Input 1`
+
+<pre>
+<b>Input</b>: Lockup: [1,0,0,0,1], k = 1
 
 <b>Output</b>: true
 
 <b>Explanation</b>: 
-You will end up in the same position as in the beginning
-</pre>
-
-
-
----
-
-## Deadliest Weapons 
-
-
-You are the supreme commander of the army, and you must ensure that the weapons you have in your artillery are deadly. Each weapon has a rating denoting how leathal the weapon is when used alone called the **deadly score**. You have a bunch of weapons and it's your duty to use the weapons in such sync that their deadly score is at their best. Determine the **highest deadly score of the weapons possible**.
-
-The deadly score of two weapons is calculated by appending the deadly score of individual weapons. Eg. let's say weapon A has a deadly score of 23 and Weapon B has a deadly score of 46. So the possible deadly scores of A and B can be 2346 or 4623.
-
-
-`Input`:
-You are given an array of numbers denoting the deadly score of individual weapon.
-
-
-`Output`:
-Return the maximum deadly score possible (In string) since this number can be huge.
-
-`Sample Input 1`
-
-<pre>
-<b>Input</b>: [9, 2, 4]
-
-<b>Output</b>: "942"
+When the new criminal is placed at index 2, none of them are adjacent. 
+[1, 0, 1, 0, 1]. 
+Hence true
 </pre>
 
 `Sample Input 2`
 
 <pre>
-<b>Input</b>: [3,30,9]
+<b>Input</b>: Lockup: [1,0,0,1], k = 1
 
-<b>Output</b>: "9330"
+<b>Output</b>: false
 </pre>
 
 
