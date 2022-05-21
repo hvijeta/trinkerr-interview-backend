@@ -44,7 +44,7 @@ NOTE:
 
 ## Place the Criminal 
 
-You are given an array of jail lockup places where each entry is represented by 0 or 1. 0 means there is no criminal, and 1 means there is a criminal there. Criminals when placed adjacent to each other will, start fighting, which is something you have to avoid. Given K more criminals, place them in the lockup such that no criminal is fighting, i.e they are not adjacent. If this task is achievable, return true, false otherwise.
+You are given an array of jail lockup places where each entry is represented by 0 or 1. 0 means there is no criminal, and 1 means there is a criminal there. Criminals when placed adjacent to each other will, start fighting, which is something you have to avoid. Given K more criminals, place them in the lockup (the lockup size is fixed, and once occupied, 0 turn into 1) such that no criminal is fighting, i.e they are not adjacent. If this task is achievable, return true, false otherwise.
 
 
 `Input`:
